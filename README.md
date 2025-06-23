@@ -19,12 +19,12 @@ $$
 tf(t,d) = \frac{f(t,d)}{\max \{f(t',d) \mid t' \in d\}}
 $$
 
-on \( f_{t,d} \) és la freqüència del terme $ t $ al document $ d $ i el denominador és la el màxim de les freqüències de tots els termes del document.
+on \( f_{t,d} \) és la freqüència del terme $t$ al document $d$ i el denominador és la el màxim de les freqüències de tots els termes del document.
 
 - **Freqüència inversa de document (IDF)**: mesura la raresa del terme en el conjunt de documents $D$
 
 $$
-\mathrm{IDF}(t, D) = \log\left( \frac{N}{ |\{ d \in D : t \in d \}|} \right)
+\mathrm{IDF}(t, D) = \log\left( \frac{|d|}{ |\{ d \in D : t \in d \}|} \right)
 $$
 
 on $|D|$ és el nombre total de documents i el denominador és el nombre de documents en què apareix el terme $t$. El valor 1 s’afegeix per evitar divisions per zero.
