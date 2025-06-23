@@ -116,28 +116,31 @@ Per tant, la representació final d’un document és el vector $\theta_d \in \m
   * Alguns recursos de *NLTK* (com el model de tokenització) es descarregaran automàticament en cridar nltk.download(...) dins dels scripts
 ### Execució dels scripts pas a pas
 
-1. **Preparar l'entorn:** Descarregueu o cloneu aquest repositori al vostre ordinador. Assegureu-vos d'haver instal·lat tots els paquets requerits esmentats en la secció de requisits. Si cal, utilitzeu pip o conda per instal·lar les dependències.
-2. **Executar els experiments amb *Spam Dataset*:** Des de la línia de comandes, navegueu fins al directori spam/ i executeu els tres scripts d'aquesta carpeta:
+1. **Preparar l'entorn:** Descarrega o clona aquest repositori al vostre ordinador. Assegura't d'haver instal·lat tots els paquets requerits esmentats en la secció de requisits. Si cal, utilitzeu pip install per instal·lar les dependències.
+2. **Executar els experiments amb *Spam Dataset*:** Des de la línia de comandes, navega fins al directori spam/ i executeu els tres scripts d'aquesta carpeta:
 
-   * python spam_TFIDF.py
-   * python spam_LSA.py
-   * python spam_LDA.py
+   *  TFIDF.py
+   *  LSA.py
+   *  LDA.py
 
    Aquests scripts carregaran automàticament el conjunt de dades de SMS spam (des d'un URL públic), preprocessaran els missatges (eliminant emojis, aplicant lematització, etc.) i entrenaran un model de classificació per avaluar la representació. Cada script realitza validació creuada (5-folds) entrenant un model de Gradient Boosting (XGBoost) i mostrant en pantalla la mètrica AUC-ROC obtinguda per diiferents folds.
-3. **Executar els experiments amb *Twitter Dataset*:** Abans d'executar aquests scripts, assegureu-vos que el fitxer de dades data/twitter_redut_Dataset.csv es troba accessible. Després, des de la línia de comandes, executeu els tres scripts al directori twitter/:
+3. **Executar els experiments amb *Twitter Dataset*:** Abans d'executar aquests scripts, assegura't que el fitxer de dades data/twitter_redut_Dataset.csv sigui accessible. Després, des de la línia de comandes, executa els tres scripts al directori twitter/:
 
-   * python twitter_TFIDF.py
-   * python twitter_LSA.py
-   * python twitter_LDA.py
+   * TFIDF.py
+   * LSA.py
+   * LDA.py
 
    Cadascun d'aquests scripts llegirà el CSV de tuits, aplicarà la vectorització corresponent (TF-IDF, LSA amb SVD truncada, o LDA amb un nombre de temes k especificat al codi) i entrenarà un classificador supervisat (en aquests experiments s'utilitza principalment **Regressió Logística**). Igualment, s'efectua validació creuada estratificada (5-folds) i es calcula l'**AUC-ROC** mitjana per comparar el rendiment entre mètodes.
-4. **Executar els experiments amb *20 Newsgroups Dataset*:** Des del directori newsgroups/, executeu els scripts:
+4. **Executar els experiments amb *20 Newsgroups Dataset*:** Des del directori newsgroups/, executa els scripts:
 
-   * python newsgroups_TFIDF.py
-   * python newsgroups_LSA.py
-   * python newsgroups_LDA.py
+   * TFIDF.py
+   * LSA.py
+   * LDA.py
 
    Aquests scripts descarregaran el corpus de *20 Newsgroups* (si no es troba ja en memòria cau) mitjançant *scikit-learn*. Es convertirà el problema en una classificació binària definint una etiqueta objectiu (per exemple, identificant documents de temàtica esportiva). Cada script generarà la representació vectorial pertinent per als documents (TF-IDF, reducció SVD a components latents, o distribucions de temes via LDA) i entrenarà un model de classificació (es fa servir **XGBoost** en aquest conjunt). Finalment es mostrarà l'AUC-ROC mitjana obtinguda en la validació creuada.
 5. **Anàlisi de resultats:** Un cop executats tots els scripts, es poden comparar les mètriques AUC-ROC per veure quina representació vectorial ha funcionat millor en cada conjunt de dades. En general, s'observa que la representació basada en TF-IDF tendeix a oferir el millor rendiment predictiu, però les representacions latents (LSA, LDA) aconsegueixen resultats propers amb l'avantatge de reduir la dimensionalitat i captar relacions semàntiques latents.
 
-
+### Bibliografia
+ - Blei, DM, AYNgiMIJordan(2003). “Latent Dirichlet Allocation”. A: Journal of Machine Learning Research 3.
+ - Deerwester, Scott et al. (1990). “Indexing by latent semantic analysis”. A: Journal of the American society for information science 41.6, pàg. 391-407.
+ -  Valle-Lisboa, Juan C i Eduardo Mizraji (2007). “The uncovering of hidden structures by latent semantic analysis”. A: Information sciences 177.19, pàg. 4122-4147.
