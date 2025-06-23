@@ -25,7 +25,7 @@ on \( f_{t,d} \) és la freqüència del terme $t$ al document $d$ i el denomina
 - **Freqüència inversa de document (IDF)**: mesura la raresa del terme en el conjunt de documents $D$
 
 $$
-\mathrm{IDF}(t, D) = \log\left( \frac{|D|}{ |\{ d \in D : t \in d \}|} \right)
+\mathrm{idf}(t, D) = \log\left( \frac{|D|}{ |\{ d \in D : t \in d \}|} \right)
 $$
 
 on $|D|$ és el nombre total de documents i el denominador és el nombre de documents en què apareix el terme $t$. El valor 1 s’afegeix per evitar divisions per zero.
@@ -33,7 +33,7 @@ on $|D|$ és el nombre total de documents i el denominador és el nombre de docu
 - **Pes TF-IDF**: és el producte de les dues components anteriors:
 
 $$
-\mathrm{TF\text{-}IDF}(t, d) = \mathrm{TF}(t, d) \cdot \mathrm{IDF}(t, D)
+\mathrm{tf\text{-}idf}(t, d) = \mathrm{tf}(t, d) \cdot \mathrm{idf}(t, D)
 $$
 
 D’aquesta manera, els termes molt específics (freqüents en un document però poc freqüents al conjunt de documents) obtenen un pes alt. En canvi, termes molt comuns en tots els documents són penalitzats.
