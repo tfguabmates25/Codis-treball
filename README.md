@@ -17,7 +17,7 @@ En aquesta secció es descriuen de manera clara i formal les tècniques de repre
 - **Freqüència del terme (TF)**: mesura la recurrència del terme $t$ dins del document $d$:
 
 $$
-tf(t,d) = \frac{f(t,d)}{\max \{f(t',d) \mid t' \in d\}}
+tf(t,d) = \frac{f(t,d)}{\max {f(t',d) \mid t' \in d}}
 $$
 
 on \( f_{t,d} \) és la freqüència del terme $t$ al document $d$ i el denominador és la el màxim de les freqüències de tots els termes del document.
