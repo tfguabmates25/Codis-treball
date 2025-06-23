@@ -98,7 +98,7 @@ Per tant, la representació final d’un document és el vector $\theta_d \in \m
 ---
 
 **Nota:** Tant **LSA** com **LDA** són mètodes de reducció de dimensionalitat que extreuen factors semàntics subjacents als documents. LSA utilitza tècniques algebraiques com la SVD truncada, mentre que LDA utilitza un model probabilístic generatiu amb distribucions de Dirichlet. En canvi, **TF-IDF** representa els documents directament a partir del vocabulari observable, sense considerar temes latents. Segons els resultats obtinguts en aquest treball, encara que **TF-IDF** sol proporcionar el millor rendiment predictiu, **LSA** i **LDA** ofereixen representacions més compactes i semànticament interpretables, especialment útils en conjunts de dades amb redundància o correlació lèxica alta.
----
+
 ## INSTRUCCIONS PER A CODI
 ### Requisits del sistema
 
