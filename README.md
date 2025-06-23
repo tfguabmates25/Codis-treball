@@ -15,12 +15,11 @@ En aquesta secció es descriuen de manera clara i formal les tècniques de repre
 **TF-IDF** és una tècnica clàssica de representació de textos que assigna a cada terme un pes numèric proporcional a la seva importància en un document concret i en el corpus global. Aquesta importància es calcula com el producte de dues components:
 
 - **Freqüència del terme (TF)**: mesura la recurrència del terme $t$ dins del document $d$:
-
 $$
-\mathrm{TF}(t, d) = \frac{f_{t,d}}{\sum_{t' \in d} f_{t',d}}
+tf(t,d) = \frac{f(t,d)}{\max \{f(t',d) \mid t' \in d\}}
 $$
 
-on \( f_{t,d} \) és la freqüència del terme $ t $ al document $ d $ i el denominador és la suma de freqüències de tots els termes del document.
+on \( f_{t,d} \) és la freqüència del terme $ t $ al document $ d $ i el denominador és la el màxim de les freqüències de tots els termes del document.
 
 - **Freqüència inversa de document (IDF)**: mesura la raresa del terme en el conjunt de documents $D$
 
