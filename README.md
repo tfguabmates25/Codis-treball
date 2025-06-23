@@ -68,7 +68,7 @@ Segons el **teorema d’Eckart–Young**, $A_k$ és la millor aproximació de ra
 
 En aquest espai latent de $k$ dimensions:
 
-- Cada document $d_i=\( \Sigma_k v_i \)$, $v_i$ dennota la i-éssima fila de $V^T_k$
+- Cada document s'expressa com $d_i=\( \Sigma_k v_i \)$, $v_i$ dennota la i-éssima fila de $V^T_k$
 
 Aquesta nova representació projecta els documents i termes en un espai semàntic reduït, on documents amb significat similar (encara que no comparteixin paraules literals) es troben més propers entre si. Així, **LSA capta relacions latents i sinònimes entre paraules i documents**, oferint representacions vectorials més compactes que poden millorar l’eficiència computacional i la generalització del model.
 
