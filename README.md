@@ -78,18 +78,18 @@ Aquesta nova representació projecta els documents i termes en un espai semànti
 
 El model assumeix el següent procés generatiu:
 
-1. Per a cada tema $k = 1, \dots, K$, es genera una distribució de paraules $\phi_k \sim \text{Dir}(\beta)$, on $\phi_k \in \mathbb{R}^V$ i $V$ és la mida del vocabulari.
+1. Per a cada tema $k = 1, \dots, K$, es genera una distribució de paraules $\phi^k \sim \text{Dir}(\beta)$, on $\phi^k \in \mathbb{R}^V$ i $V$ és la mida del vocabulari.
 2. Per a cada document $d$:
    - Es genera una distribució de temes $\theta_d \sim \text{Dir}(\alpha)$, on $\theta_d \in \mathbb{R}^K$.
-   - Per a cada paraula $w_{dn}$ del document $d$:
-     - Es tria un tema latent $z_{dn}\sim \text{Multinomial}(\theta_d)$,
-     - Es tria una paraula $w_{dn} \sim \text{Multinomial}(\phi_{z_{dn}})$.
+   - Per a cada paraula $w_{n}$ del document $d$:
+     - Es tria un tema latent $z_{n}\sim \text{Multinomial}(\theta_d)$,
+     - Es tria una paraula $w_{n} \sim \text{Multinomial}(\phi^{z_{n}})$.
 
 En resum, les **variables latents** són:
 
 - $\theta_d$: vector de probabilitats de temes per al document $d$,
-- $z_{dn}$: assignació de tema a la \( n \)-èsima paraula del document $d$,
-- $\phi_k$: distribució de paraules del tema $k$.
+- $z_{n}$: assignació de tema a la \( n \)-èsima paraula del document $d$,
+- $\phi^k$: distribució de paraules del tema $k$.
 
 Durant el procés d’inferència (per exemple, mitjançant *mostreig de Gibbs* o *mètodes variacionals*), s’estimen les distribucions a posteriori $p(\theta_d \mid w_d)$ i $p(\phi_k \mid w_d)$.
 
