@@ -33,7 +33,7 @@ on $|D|$ és el nombre total de documents i el denominador és el nombre de docu
 - **Pes TF-IDF**: és el producte de les dues components anteriors:
 
 $$
-\mathrm{TF\text{-}IDF}(t, d, D) = \mathrm{TF}(t, d) \cdot \mathrm{IDF}(t, D)
+\mathrm{TF\text{-}IDF}(t, d) = \mathrm{TF}(t, d) \cdot \mathrm{IDF}(t, D)
 $$
 
 D’aquesta manera, els termes molt específics (freqüents en un document però poc freqüents al conjunt de documents) obtenen un pes alt. En canvi, termes molt comuns en tots els documents són penalitzats.
