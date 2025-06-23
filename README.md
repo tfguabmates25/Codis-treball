@@ -91,14 +91,15 @@ En resum, les **variables latents** són:
 - $z_{n}$: assignació de tema a la \( n \)-èsima paraula del document $d$,
 - $\phi^k$: distribució de paraules del tema $k$.
 
-Durant el procés d’inferència (per exemple, mitjançant *mostreig de Gibbs* o *mètodes variacionals*), s’estimen les distribucions a posteriori $p(\theta_d \mid w_d)$ i $p(\phi_k \mid w_d)$.
+Durant el procés d’inferència (per exemple, mitjançant *mostreig de Gibbs* o *mètodes variacionals*), s’estimen les distribucions a posteriori $p(\theta_d \mid w_d)$ i $p(\phi^k \mid w_d)$.
 
 Per tant, la representació final d’un document és el vector $\theta_d \in \mathbb{R}^K$, que expressa la proporció estimada de cada tema latent en el document. Aquesta **representació temàtica** redueix la dimensionalitat del document respecte de l'espai original de paraules i capta **estructures semàntiques globals** del corpus.
 
 ---
 
 **Nota:** Tant **LSA** com **LDA** són mètodes de reducció de dimensionalitat que extreuen factors semàntics subjacents als documents. LSA utilitza tècniques algebraiques com la SVD truncada, mentre que LDA utilitza un model probabilístic generatiu amb distribucions de Dirichlet. En canvi, **TF-IDF** representa els documents directament a partir del vocabulari observable, sense considerar temes latents. Segons els resultats obtinguts en aquest treball, encara que **TF-IDF** sol proporcionar el millor rendiment predictiu, **LSA** i **LDA** ofereixen representacions més compactes i semànticament interpretables, especialment útils en conjunts de dades amb redundància o correlació lèxica alta.
-
+---
+## INSTRUCCIONS PER A CODI
 ### Requisits del sistema
 
 * **Python 3.8+**: Es recomana tenir instal·lada una versió recent de Python (3.8 o superior).
