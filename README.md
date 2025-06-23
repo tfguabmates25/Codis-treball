@@ -43,7 +43,7 @@ Cada document queda representat com un vector en un espai de dimensionalitat igu
 
 ### LSA (Latent Semantic Analysis via Truncated SVD)
 
-**LSA** o *Anàlisi Semàntica Latent* és un mètode algebraic que permet obtenir representacions latents i més compactes dels documents textuals. El procés comença construint una matriu terme-document $ A \in \mathbb{R}^{m \times n} $, on cada fila representa un terme, cada columna un document, i les entrades són pesos (habitualment valors TF-IDF) que reflecteixen la importància del terme al document.
+**LSA** o *Anàlisi Semàntica Latent* és un mètode algebraic que permet obtenir representacions latents i més compactes dels documents textuals. El procés comença construint una matriu terme-document $A \in \mathbb{R}^{m \times n}$, on cada fila representa un terme, cada columna un document, i les entrades són pesos (habitualment valors TF-IDF) que reflecteixen la importància del terme al document.
 
 A continuació, s’aplica una **Descomposició en Valors Singulars (SVD)** sobre la matriu $A$:
 
